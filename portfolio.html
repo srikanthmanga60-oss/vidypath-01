@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vidyapath — My portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/vidyapath.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html" class="logo"><span class="dot"></span>vidyapath</a>
+  <input class="top-search" type="text" placeholder="Search courses, jobs, people...">
+  <div class="top-right">
+    <div class="icon-btn">&#128276;<span class="badge-dot"></span></div>
+    <div class="icon-btn">&#128172;</div>
+    <a href="index.html" class="avatar-btn">AR</a>
+  </div>
+</div>
+
+<div class="shell">
+  <aside class="sidebar">
+    <div class="side-label">Overview</div>
+    <a href="dashboard.html" class="side-link"><span class="ico">&#8962;</span>Dashboard</a>
+    <a href="portfolio.html" class="side-link active"><span class="ico">&#9737;</span>My portfolio</a>
+    <a href="resume.html" class="side-link"><span class="ico">&#128196;</span>Resume</a>
+
+    <div class="side-label">Grow</div>
+    <a href="learning.html" class="side-link"><span class="ico">&#127891;</span>Learning paths</a>
+    <a href="jobs.html" class="side-link"><span class="ico">&#128188;</span>Jobs &amp; internships</a>
+    <a href="community.html" class="side-link"><span class="ico">&#128101;</span>Community</a>
+
+    <div class="side-label">Account</div>
+    <a href="#" class="side-link"><span class="ico">&#9881;</span>Settings</a>
+    <a href="index.html" class="side-link"><span class="ico">&#8674;</span>Sign out</a>
+  </aside>
+
+  <main class="main">
+    <div class="page-head">
+      <div>
+        <h1>My portfolio</h1>
+        <p>Every upload here feeds your resume automatically.</p>
+      </div>
+      <a href="#" class="btn-primary">Upload new work</a>
+    </div>
+
+    <div class="card">
+      <h2>All work (12)</h2>
+      <div class="portfolio-grid" style="grid-template-columns:repeat(4,1fr);">
+        <div class="p-thumb">Kitten character rig</div>
+        <div class="p-thumb">Storyboard — short film</div>
+        <div class="p-thumb">Environment concept</div>
+        <div class="p-thumb">Character turnaround</div>
+        <div class="p-thumb">Editorial render series</div>
+        <div class="p-thumb">Creature design study</div>
+        <div class="p-thumb">Lighting pass — hallway</div>
+        <div class="p-thumb">Prop modeling set</div>
+        <div class="p-thumb">Facial rig test</div>
+        <div class="p-thumb">Storyboard — chase scene</div>
+        <div class="p-thumb">Texture study</div>
+        <a href="#" class="p-thumb add">+ Add work</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Recent feedback on your work</h2>
+      <div class="comment-row"><div class="c-avatar" style="background:var(--coral);">KV</div><div class="comment-body"><p>The rig on your kitten character reads really clean — the tail deformation especially.</p><small>Karthik Varma · on Kitten character rig</small></div></div>
+      <div class="comment-row"><div class="c-avatar" style="background:var(--teal);">SP</div><div class="comment-body"><p>Panel 4 could use a tighter close-up before the reveal — otherwise strong pacing.</p><small>Sanjana Pillai · on Storyboard — short film</small></div></div>
+      <div class="comment-row"><div class="c-avatar" style="background:var(--marigold);">RN</div><div class="comment-body"><p>Love the silhouette on the creature design — reads well even at thumbnail size.</p><small>Rehan Nair · on Creature design study</small></div></div>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

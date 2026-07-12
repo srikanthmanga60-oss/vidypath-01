@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vidyapath — Sign in</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/vidyapath.css">
+</head>
+<body>
+
+<div class="auth-screen">
+  <div class="auth-shell">
+    <div class="form-side">
+      <a href="index.html" class="back-link">&larr; Back to site</a>
+      <div class="logo" style="margin-bottom:28px;"><span class="dot"></span>vidyapath</div>
+
+      <div class="tabs">
+        <div class="tab active" id="tab-signin" onclick="setMode('signin')">Sign in</div>
+        <div class="tab" id="tab-signup" onclick="setMode('signup')">Create account</div>
+      </div>
+
+      <h1 class="form-title" id="form-title">Welcome back</h1>
+      <p class="form-sub" id="form-sub">Sign in to keep your portfolio and resume in sync.</p>
+
+      <form class="auth-form" onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
+        <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="you@college.edu"></div>
+        <div class="field"><label for="password">Password</label><input id="password" type="password" placeholder="Enter your password"></div>
+        <div class="row-between">
+          <label class="checkbox"><input type="checkbox">Keep me signed in</label>
+          <a href="#" class="link">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn-submit" id="submit-btn">Sign in</button>
+      </form>
+
+      <div class="divider">or continue with</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <a href="dashboard.html" class="btn-social">Google</a>
+        <a href="dashboard.html" class="btn-social">LinkedIn</a>
+      </div>
+
+      <p class="switch-line" id="switch-line">New to Vidyapath? <a href="#" class="link" onclick="setMode('signup');return false;">Create a free account</a></p>
+    </div>
+
+    <div class="visual-side">
+      <div class="visual-top">
+        <h2>One profile. Every recruiter sees your latest work.</h2>
+        <p>Your portfolio, courses, and internships feed this automatically — no more manually rewriting your resume.</p>
+      </div>
+      <div class="mini-resume">
+        <div class="mini-top"><span class="mono" style="font-size:0.72rem;color:#7C8494;">resume preview</span><div class="mini-sync"><span class="pulse"></span>live</div></div>
+        <div class="mini-item"><span>Kitten character rig</span><span class="check">&#10003;</span></div>
+        <div class="mini-item"><span>Intro to Rigging — completed</span><span class="check">&#10003;</span></div>
+        <div class="mini-item"><span>Vanara Games — verified</span><span class="check">&#10003;</span></div>
+      </div>
+      <div class="visual-bottom">Built for India's design, animation and dev freshers.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function setMode(mode) {
+    const isSignin = mode === 'signin';
+    document.getElementById('tab-signin').classList.toggle('active', isSignin);
+    document.getElementById('tab-signup').classList.toggle('active', !isSignin);
+    document.getElementById('form-title').textContent = isSignin ? 'Welcome back' : 'Create your profile';
+    document.getElementById('form-sub').textContent = isSignin
+      ? 'Sign in to keep your portfolio and resume in sync.'
+      : 'Start free — upload your first piece of work today.';
+    document.getElementById('submit-btn').textContent = isSignin ? 'Sign in' : 'Create account';
+    document.getElementById('switch-line').innerHTML = isSignin
+      ? 'New to Vidyapath? <a href="#" class="link" onclick="setMode(\'signup\');return false;">Create a free account</a>'
+      : 'Already have an account? <a href="#" class="link" onclick="setMode(\'signin\');return false;">Sign in</a>';
+  }
+  // Respect ?tab=signup from links on the landing page
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('tab') === 'signup') setMode('signup');
+</script>
+
+</body>
+</html>
